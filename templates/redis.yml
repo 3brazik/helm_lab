@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Values.redis_pod }}
+  labels:
+    name: {{ .Values.redis_pod }}
+spec:
+  containers:
+  - name: {{ .Values.redis_cont_name }}
+    image: {{ .Values.redis_img }}
+    ports:
+    - containerPort: {{ .Values.containerPort }}

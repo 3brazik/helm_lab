@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-svc
+spec:
+  selector:
+    name: {{ .Values.redis_pod }}
+  ports:
+    - protocol: {{ .Values.redis_protocol }}
+      port: {{ .Values.containerPort }}
+      targetPort: {{ .Values.containerPort }}
